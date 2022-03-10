@@ -1,4 +1,10 @@
+<<<<<<< HEAD
 {
     "semi":true,
     "singleQuote": true
+=======
+{
+    "semi":true,
+    "singleQuote": true
+>>>>>>> a0303df78218165cd53a24d3059dc52d16947fbe
 }
