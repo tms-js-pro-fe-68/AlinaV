@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import logo from './logo.svg';
 import './App.css';
+import ButtonColor from './components/ButtonColor.jsx'
 
 export default function App() {
   const [count, setCount] = useState(0);
@@ -18,6 +19,7 @@ export default function App() {
         <p>
           Edit <code>App.jsx</code> and save to test HMR updates.
         </p>
+        <ButtonColor />
         <p>
           <a
             className="App-link"
