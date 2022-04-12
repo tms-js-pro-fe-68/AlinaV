@@ -69,6 +69,8 @@ export default function App() {
             whichIsTrue()
             if(stateBul === true){
               setType(e.target.value)
+            }else{
+              setType('')
             }
           }}/>
           <span>tshirt</span>
@@ -77,6 +79,8 @@ export default function App() {
             whichIsTrue()
             if(stateBul === true){
               setType(e.target.value)
+            }else{
+              setType('')
             }
           }}/>
           <span>jeans</span>
@@ -85,7 +89,9 @@ export default function App() {
            whichIsTrue()
            if(stateBul === true){
              setType(e.target.value)
-           }
+           }else{
+              setType('')
+            }
           }}/>
           <span>sweatshirt</span>
         </div>
