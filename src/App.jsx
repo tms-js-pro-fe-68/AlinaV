@@ -7,12 +7,15 @@ export default function App() {
   const [price, setPrice] = useState()
   const [type, setType] = useState([])
 
-  const [stateBul, setStateBul] = useState(false)
+  const [useChecked, setChecked] = useState(!'checked')
 
-  function whichIsTrue() {
-    return(
-      stateBul === false ? setStateBul(true) : setStateBul(false)
-    )
+  function whichIsTrue(target) {
+    useChecked === !'checked' ? setChecked('checked') : setChecked(!'checked')
+      if(useChecked === 'checked'){
+        setType(target)
+      }else{
+         setType('')
+     }
   }
 
   function show() {
@@ -52,48 +55,42 @@ export default function App() {
         />
       </div>
       <div>
-        <input value={price} placeholder='price'
-          onChange={(e) => {
+      <select className='center' onChange={(e) => {
             setPrice(e.target.value)
           }}
           style={{
-            width:'200px',
-            height:'20px',
+            width:'210px',
+            height:'25px',
             marginTop: "10px"
           }}
-        />
+      >
+      <option value='price'>price</option>
+      <option value='100'>100</option>
+      <option value='200'>200</option>
+      <option value='300'>300</option>
+      <option value='400'>400</option>
+      <option value='500'>500</option>
+      </select>
       </div>
 
         <div style={{margin: 10}}>
-          <input type='checkbox' value='tshirt' onClick={(e) => {
-            whichIsTrue()
-            if(stateBul === true){
-              setType(e.target.value)
-            }else{
-              setType('')
-            }
-          }}/>
-          <span>tshirt</span>
+          <label>
+            <input type='checkbox' checked={useChecked} value='tshirt' onChange={(e) => {
+              whichIsTrue(e.target.value)
+            }}/>
+          tshirt</label>
 
-          <input type='checkbox' value='jeans' onClick={(e) => {
-            whichIsTrue()
-            if(stateBul === true){
-              setType(e.target.value)
-            }else{
-              setType('')
-            }
-          }}/>
-          <span>jeans</span>
+          <label>
+            <input type='checkbox' checked={useChecked} value='jeans' onChange={(e) => {
+              whichIsTrue(e.target.value)
+            }}/>
+          jeans</label>
 
-          <input type='checkbox' value='sweatshirt' onClick={(e) => {
-           whichIsTrue()
-           if(stateBul === true){
-             setType(e.target.value)
-           }else{
-              setType('')
-            }
-          }}/>
-          <span>sweatshirt</span>
+          <label>
+            <input type='checkbox' checked={useChecked} value='sweatshirt' onChange={(e) => {
+              whichIsTrue(e.target.value)
+            }}/>
+          sweatshirt</label>
         </div>
 
         <button type='submit' onClick={() => {show(name, discription, price, type)}} style={{
