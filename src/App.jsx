@@ -13,7 +13,7 @@ function useCustomHook (url) {
     fetch(url)
       .then((response) => {return response.json()})
       .then((data) => {
-        setData(data.message);
+        setData(data);
         setIsLoading(false);
       })
       .catch((err) => setError(err.message))
@@ -33,7 +33,7 @@ export default function App() {
       )
     }else{
       return (
-        <div><img src={data} style={{width: "800px", height:"800px"}}/></div>
+        <div><img src={data?.message} style={{width: "800px", height:"800px"}}/></div>
       )
     }
   }
