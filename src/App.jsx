@@ -1,13 +1,11 @@
 import React, { useEffect, useState } from 'react';
-import RequestIdentity from './components/fetch.jsx';
 import './App.css';
 
 export default function App() {
   return (
     <div className='center'>
       <div>
-        <p className='center text-params'>DOGS</p>
-        <RequestIdentity />
+        <p className='center text-params'>MAIN</p>
       </div> 
     </div>
   )
