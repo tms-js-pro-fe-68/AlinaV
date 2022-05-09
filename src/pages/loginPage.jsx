@@ -1,4 +1,5 @@
-// import React, {useState } from 'react';
+
+import { Box, Button, Paper, TextField, Typography, ThemeProvider } from '@mui/material';
 import { useFormik } from 'formik';
 import { useNavigate } from 'react-router-dom';
 import { object, string } from 'yup'
@@ -10,18 +11,6 @@ const schemaSignIn = object().shape({
 
 export default function LoginPage() {
     const navigate = useNavigate();
-
-    const formik = useFormik({
-        initialValues: {
-            email: '',
-            password: '',
-        },
-        onSubmit: handleSubmit,
-        validationSchema: schemaSignIn,
-        validateOnMount: true //валидация с начала самого
-    })
-
-    console.log(formik)
 
     const handleSubmit = async (values, { setSubmiting }) => {
         const {email, password} = values;
@@ -47,34 +36,65 @@ export default function LoginPage() {
         setSubmiting(false)
     }
 
+    const formik = useFormik({
+        initialValues: {
+            email: '',
+            password: '',
+        },
+        onSubmit: handleSubmit,
+        validationSchema: schemaSignIn,
+        validateOnMount: true 
+    })
+
+    console.log(formik)
+
     return(
-        <div style={{height: '100vh', width:'100vw', display:'flex', alignItems:'center', justifyContent:'center'}}>
-            <div style={{display:'grid', gridTemplateColumns:'1fr', gap: 16}}>
-            
-            <form onSubmit={formik.handleSubmit}>
-                <label htmlFor='email'>Email Address</label>
-                <input
-                value={formik.values.email} 
+        <Box className='justify-center items-center'>
+            <Paper
+            component='form'
+            className='grid grid-cols-1 gap-4 p-4 w-1/2'
+            sx={{display:'grid', 
+                gridTemplateColumns:'1fr', 
+                gap: 2,
+                p: 4,
+                color: '#8bc34a'
+            }}
+            onSubmit={formik.handleSubmit}>
+                
+                <Typography variant='h6'>Please sign in</Typography>
+
+                <TextField
+                label='Email Address'
+                id='email'
                 name='email'
                 type='email'
                 onBlur={formik.handleBlur}
-                onChange={formik.handleChange}/>
+                value={formik.values.email} 
+                onChange={formik.handleChange}
+                error={formik.touched.email && !!formik.errors.email}
+                helperText={
+                    formik.touched.email && !!formik.errors.email && formik.errors.email
+                }/>
 
                 {formik.touched.email && !!formik.errors.email && (<span style={{color:'#b71c1c'}}>{formik.errors.email}</span>)}
 
-                <label htmlFor='email'>Password</label>
-                <input 
+                <TextField
+                label='Password' 
                 value={formik.values.password} 
-                name='email'
-                type='email'
+                name='password'
+                type='password'
+                id='password'
                 onBlur={formik.handleBlur}
-                onChange={formik.handleChange}/>
+                onChange={formik.handleChange}
+                error={formik.touched.password && !!formik.errors.password}
+                helperText={
+                    formik.touched.password && !!formik.errors.password && formik.errors.password
+                }/>
 
                 {formik.touched.password && !!formik.errors.password && (<span style={{color:'#b71c1c'}}>{formik.errors.password}</span>)}
 
-                <button type='submit' disabled={!formik.isValid && !formik.isSubmiting}>Sign in</button>
-            </form>
-            </div>
-        </div>
+                <Button type='submit' disabled={!formik.isValid && !formik.isSubmiting}>Sign in</Button>
+            </Paper>
+        </Box>
     )
 }
