@@ -40,9 +40,9 @@ export default function ListItems(){
         .then(setTodos)
     }, [])
 
-    const handleItemClick = index => () => {
-        // checkbox.false => checkbox.true
-    }
+    // const handleItemClick = index => () => {
+    //     // checkbox.false => checkbox.true
+    // }
 
     const [isDeleteConfirmOpen, setIsDeleteConfirmOpen] = useState(false)
 
@@ -61,12 +61,12 @@ export default function ListItems(){
                             <IconButton edge="end">
                                 <EditIcon />
                             </IconButton>
-                            <IconButton edge="end" onClick={handleDeleteConfirmOpen{todoItem.id}}>
+                            <IconButton edge="end" onClick={() => {handleDeleteConfirmOpen{todoItem.id}}}>
                                 <DeleteIcon />
                             </IconButton>
                             
                         </Stack>
-                    }
+                        }
                     disablePadding
                 >
                     <ListItemButton role={undefined} onClick={handleToggle(todoItem.id)} dense>
