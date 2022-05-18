@@ -46,8 +46,6 @@ export default function LoginPage() {
         validateOnMount: true 
     })
 
-    console.log(formik)
-
     return(
         <Box className='justify-center items-center'>
             <Paper
