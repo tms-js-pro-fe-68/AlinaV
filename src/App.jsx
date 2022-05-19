@@ -1,6 +1,6 @@
 import {BrowserRouter as Router, Routes, Route} from 'react-router-dom'
 import LoginPage from './pages/LoginPage.jsx'
-import HomePage from './pages/homePage/HomePage'
+import HomePage from './pages/homePage/HomePage.jsx'
 
 export default function App() {
   return(
