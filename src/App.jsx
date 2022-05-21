@@ -1,6 +1,7 @@
 import './App.css';
 import { QueryClientProvider, useQueryClient } from 'react-query';
 import HomePage from './components/Homepage.jsx'
+import { Route, Router, Routes } from 'react-router-dom';
 
 export default function App() {
 
