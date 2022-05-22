@@ -1,15 +1,14 @@
-
+import HomePageContextProvider from './GetContext.jsx';
 import ApiQuery from './ApiQiery.jsx';
 
-export default function App() {
+export default function Homepage() {
 
   return (
+    <HomePageContextProvider>
     <div className='center'>
-        <div>
-        <p className='center text-params'>MAIN</p>
-            <ApiQuery /> 
-        </div>
+      <ApiQuery /> 
     </div>
+    </HomePageContextProvider>
   )
 }
 
@@ -17,7 +16,7 @@ export default function App() {
 
 
 // import React, { useEffect, useState } from 'react';
-// import { HomePageContextProvider } from './GetContext.jsx';
+
 // import FormForApiContext from './FormForApiContext.jsx'
 
 //   const [answer, setAnswer] = useState();

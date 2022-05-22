@@ -2,9 +2,9 @@ import { createContext, useContext } from "react";
 
 const Context = createContext()
 
-export const HomePageContext = () => useContext(Context)
+export const useHomePageContext = () => useContext(Context)
 
-export default function GetContext(children, context){
+export default function HomePageContext(children, context){
     return <Context.Provider value={{context}}>
         {children}
     </Context.Provider>
