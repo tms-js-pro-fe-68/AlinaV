@@ -3,7 +3,7 @@ import axiosApi from "./axiosApi";
 
 export default function ApiQuery(){
     const {isLoading, data, error } = useQuery('massage', () =>
-     axiosApi.get("/api/breeds/image/random").then ((res)=> res.data ))
+     axiosApi.get("/api/breeds/image/random"))
 
      if (isLoading){
          return "Loading..."
@@ -14,3 +14,5 @@ export default function ApiQuery(){
         <div><img src={data?.massage} style={{width: "800px", height:"800px"}}/></div>
      )
 }
+
+// .then ((res)=> res.data )
