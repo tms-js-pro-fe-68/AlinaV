@@ -1,12 +1,14 @@
-// import HomePageContextProvider from './HomePageContext.jsx';
+import HomePageContext from './HomePageContext.jsx';
 import ApiQuery from './ApiQiery.jsx';
 
 export default function Homepage() {
 
   return (
+    <HomePageContext>
     <div className='center'>
       <ApiQuery /> 
     </div>
+    </HomePageContext>
   )
 }
 
