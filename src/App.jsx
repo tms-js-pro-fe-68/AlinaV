@@ -1,5 +1,5 @@
 import './App.css';
-import { QueryClientProvider, useQueryClient } from 'react-query';
+// import { QueryClientProvider, useQueryClient } from 'react-query';
 import HomePage from './components/Homepage.jsx'
 import { Route, Router, Routes } from 'react-router-dom';
 
@@ -14,12 +14,12 @@ export default function App() {
   })
 
   return (
-    <QueryClientProvider client={queryClient}>
+    // <QueryClientProvider client={queryClient}>
       <Router>
         <Routes>
           <Route path='/' element={<HomePage/>} exact/>
         </Routes>
       </Router>
-    </QueryClientProvider>
+    // </QueryClientProvider>
   )
 }

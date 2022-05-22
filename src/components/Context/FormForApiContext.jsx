@@ -1,5 +1,5 @@
 
-import { useHomePageContext } from './getContex.jsx'
+import useHomePageContext from './getContex.jsx'
 
 export default function FormForApiContext(){
   

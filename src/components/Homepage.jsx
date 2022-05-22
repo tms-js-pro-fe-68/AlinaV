@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 // import ApiQuery from './ApiQiery.jsx';
-import { HomePageContextProvider } from './GetContext.jsx';
-import FormForApiContext from './FormForApiContext.jsx'
+import HomePageContextProvider from './Context/GetContext.jsx';
+import FormForApiContext from './Context/FormForApiContext.jsx'
 
 
 export default function App() {
@@ -29,7 +29,6 @@ export default function App() {
             <div className='center'>
                 <div>
                 <p className='center text-params'>MAIN</p>
-                {/* <ApiQuery /> */}
             </div>
                 <FormForApiContext/> 
             </div>
