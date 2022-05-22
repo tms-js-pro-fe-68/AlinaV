@@ -1,12 +1,24 @@
-import React, { useEffect, useState } from 'react';
 import './App.css';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { QueryClientProvider, QueryClient } from 'react-query';
+import HomePage from './components/Homepage.jsx'
+
+const queryClient = new QueryClient({
+  defaultOptions: {
+    queries: {
+      staleTime: Infinity,
+    },
+  },
+})
 
 export default function App() {
   return (
-    <div className='center'>
-      <div>
-        <p className='center text-params'>MAIN</p>
-      </div> 
-    </div>
+    <QueryClientProvider client={queryClient}>
+      <Router>
+        <Routes>
+          <Route path='/' element={<HomePage/>} exact/>
+        </Routes>
+      </Router>
+</QueryClientProvider>
   )
 }
