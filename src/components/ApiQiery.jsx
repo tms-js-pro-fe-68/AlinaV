@@ -6,7 +6,7 @@ export default function ApiQuery(){
     const {isInitialized} = useHomePageContext();
 
     const {isLoading, data, error } = useQuery('massage', () =>
-     axiosApi.get("/api/breeds/image/random").then ((res)=> res.data ),
+     axiosApi.get("/api/breeds/image/random"),
      {enabled:isInitialized})
 
      if (isLoading){
