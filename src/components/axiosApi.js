@@ -1,5 +1,5 @@
 import axios from 'axios'
 
 export default axios.create({
-    baseURL: "https://dog.ceo/api/breeds/image/random",
+    baseURL: "https://dog.ceo",
 })
