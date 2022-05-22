@@ -1,5 +1,5 @@
 import { useQuery } from "react-query";
-import { useHomePageContext } from './Context/HomePageContext.jsx'
+import { useHomePageContext } from '../Context/HomePageContext.jsx'
 import axiosApi from "./axiosApi";
 
 export default function ApiQuery(){

@@ -1,9 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import HomePageContextProvider from './Context/GetContext.jsx';
-import FormForApiContext from './Context/FormForApiContext.jsx'
-
 import HomePageContext from './Context/HomePageContext.jsx';
-import ApiQuery from './ApiQiery.jsx';
+import ApiQuery from './ReactQuery/ApiQiery';
 
 export default function Homepage() {
 
