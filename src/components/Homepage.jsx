@@ -1,4 +1,4 @@
-import HomePageContext from './HomePageContext.jsx';
+import HomePageContext from './Context/HomePageContext.jsx';
 import ApiQuery from './ApiQiery.jsx';
 
 export default function Homepage() {
