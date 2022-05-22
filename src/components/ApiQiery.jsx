@@ -6,9 +6,9 @@ export default function ApiQuery(){
      axiosApi.get("/api/breeds/image/random"))
 
      if (isLoading){
-         return "Loading..."
+         return <p>"Loading..."</p>
      }
-     if(error) return "Have error"
+     if(error) return <p>"Have error"</p>
 
      return(
         <div><img src={data?.massage} style={{width: "800px", height:"800px"}}/></div>
